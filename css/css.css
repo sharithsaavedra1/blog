@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap');
+/* 
+   Variables globales (colores, tipografías, sombras, bordes)
+ */
+
+:root {
+  --pink-50:  #fff0f6;
+  --pink-100: #ffd6e7;
+  --pink-200: #ffadd2;
+  --pink-300: #ff85c2;
+  --pink-400: #f759ab;
+  --pink-500: #eb2f96;
+  --pink-600: #c41d7f;
+  --gray-50:  #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e8e8e8;
+  --gray-500: #8c8c8c;
+  --gray-700: #434343;
+  --gray-900: #1a1a1a;
+  --white: #ffffff;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Nunito', sans-serif;
+  --shadow-sm: 0 1px 4px rgba(235,47,150,.10);
+  --shadow-md: 0 4px 16px rgba(235,47,150,.13);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--pink-50);
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+.category-section {
+  background: var(--white);
+  border: 1.5px solid var(--pink-100);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.category-header {
+  background: linear-gradient(90deg, var(--pink-100) 0%, var(--pink-50) 100%);
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  border-bottom: 2px solid var(--pink-100);
+}
+.category-icon { font-size: 1.6rem; line-height: 1; }
+.category-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--gray-900);
+}
+.category-header p { font-size: .82rem; color: var(--gray-500); margin-top: .1rem; }
+.tags-grid { padding: 1.5rem 1.75rem; display: flex; flex-direction: column; gap: 2rem; }
+.tag-card {
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.tag-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--gray-50);
+  padding: .65rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+.tag-name {
+  font-family: 'Courier New', monospace;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--pink-600);
+  background: var(--pink-50);
+  border: 1px solid var(--pink-200);
+  padding: .15rem .5rem;
+  border-radius: 5px;
+}
+.tag-badge {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: .2rem .6rem;
+  border-radius: 20px;
+  background: var(--pink-100);
+  color: var(--pink-500);
+}
+.tag-card-body { padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: .9rem; }
+.info-block h4 {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--pink-400);
+  margin-bottom: .3rem;
+}
+.info-block p, .info-block ul { font-size: .88rem; color: var(--gray-700); }
+.info-block ul { padding-left: 1.2rem; }
+.info-block ul li { margin-bottom: .15rem; }
+pre {
+  background: var(--gray-900);
+  color: #f8c8d8;
+  font-family: 'Courier New', monospace;
+  font-size: .82rem;
+  padding: .9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  line-height: 1.6;
+}
+.demo-box {
+  background: var(--pink-50);
+  border: 1.5px dashed var(--pink-200);
+  border-radius: var(--radius-sm);
+  padding: .9rem 1.1rem;
+  font-size: .88rem;
+}
+.demo-box table { border-collapse: collapse; width: 100%; font-size: .84rem; }
+.demo-box th {
+  background: var(--pink-200);
+  padding: .4rem .7rem;
+  text-align: left;
+  color: var(--pink-600);
+}
+.demo-box td { border: 1px solid var(--pink-100); padding: .35rem .7rem; }
+.demo-box tr:nth-child(even) td { background: var(--pink-50); }
+@media (max-width: 768px) {
+  .container { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  nav { display: none; }
+}
+header {
+  background: var(--white);
+  border-bottom: 2px solid var(--pink-100);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--pink-500);
+  text-decoration: none;
+}
+.logo span { color: var(--gray-900); }
+nav { display: flex; gap: .25rem; flex-wrap: wrap; }
+nav a {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--gray-500);
+  text-decoration: none;
+  padding: .35rem .75rem;
+  border-radius: 20px;
+  transition: background .2s, color .2s;
+}
+nav a:hover, nav a.active {
+  background: var(--pink-100);
+  color: var(--pink-600);
+}
+.hero {
+  background: linear-gradient(135deg, var(--pink-100) 0%, var(--white) 60%, var(--pink-50) 100%);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  border-bottom: 2px solid var(--pink-100);
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--pink-100);
+  color: var(--pink-500);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: .3rem .9rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--gray-900);
+  margin-bottom: .75rem;
+  line-height: 1.2;
+}
+.hero h1 em { color: var(--pink-500); font-style: normal; }
+.hero p {
+  color: var(--gray-500);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+}
+.hero-stats { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--pink-500);
+}
+.stat span { font-size: .8rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .5px; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.sidebar {
+  position: sticky;
+  top: 80px;
+  background: var(--white);
+  border: 1.5px solid var(--pink-100);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gray-900);
+  margin-bottom: .85rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--pink-100);
+}
+.sidebar ul { list-style: none; display: flex; flex-direction: column; gap: .2rem; }
+.sidebar ul a {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  text-decoration: none;
+  color: var(--gray-500);
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .45rem .7rem;
+  border-radius: var(--radius-sm);
+  transition: background .2s, color .2s;
+}
+.sidebar ul a:hover { background: var(--pink-50); color: var(--pink-500); }
+.main { display: flex; flex-direction: column; gap: 3rem; }
+.form-section {
+  background: var(--white);
+  border: 1.5px solid var(--pink-100);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.form-header {
+  background: linear-gradient(90deg, var(--pink-100) 0%, var(--pink-50) 100%);
+  padding: 1.25rem 1.75rem;
+  border-bottom: 2px solid var(--pink-100);
+}
+.form-header h2 { font-family: var(--font-display); font-size: 1.35rem; color: var(--gray-900); }
+.form-header p { font-size: .82rem; color: var(--gray-500); margin-top: .1rem; }
+.form-inner { padding: 1.75rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.form-group { display: flex; flex-direction: column; gap: .35rem; }
+.form-group.full { grid-column: 1 / -1; }
+label {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+input, select, textarea {
+  font-family: var(--font-body);
+  font-size: .9rem;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: .55rem .85rem;
+  background: var(--white);
+  color: var(--gray-700);
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--pink-300);
+  box-shadow: 0 0 0 3px rgba(235,47,150,.08);
+}
+textarea { resize: vertical; min-height: 90px; }
+.form-radios { display: flex; gap: 1.25rem; align-items: center; padding: .4rem 0; }
+.form-radios label {
+  display: flex; align-items: center; gap: .4rem;
+  font-weight: 600; font-size: .86rem;
+  text-transform: none; letter-spacing: 0; cursor: pointer;
+}
+.btn-submit {
+  background: linear-gradient(135deg, var(--pink-400), var(--pink-500));
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 700;
+  border: none;
+  padding: .7rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: opacity .2s, transform .1s;
+  margin-top: .5rem;
+}
+.btn-submit:hover { opacity: .9; transform: translateY(-1px); }
+.form-success {
+  display: none;
+  background: var(--pink-50);
+  border: 1.5px solid var(--pink-200);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  font-size: .9rem;
+  color: var(--pink-600);
+  margin-top: 1rem;
+  text-align: center;
+}
+footer {
+  background: var(--white);
+  border-top: 2px solid var(--pink-100);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-top: 1rem;
+  font-size: .82rem;
+  color: var(--gray-500);
+}
+footer strong { color: var(--pink-500); }
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: .5rem; flex-wrap: wrap; }
+.footer-links a { text-decoration: none; color: var(--gray-500); transition: color .2s; }
+.footer-links a:hover { color: var(--pink-500); }
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero-stats {
+    gap: 1rem;
+  }
+}
+
+/* ===========================
+   DISEÑO RESPONSIVE "ANCHO TOTAL"
+   =========================== */
+
+@media screen and (max-width: 850px) {
+  /* Hacemos que el contenedor principal no tenga márgenes laterales excesivos */
+  .container {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 1rem 0.5rem !important; /* Reducimos márgenes laterales */
+    max-width: 100% !important;
+  }
+
+  /* El sidebar ahora es una lista ancha arriba */
+  .sidebar {
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+    box-shadow: none !important;
+    border-radius: 0 !important; /* Estilo más limpio en móvil */
+  }
+
+  .sidebar ul {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 8px !important;
+  }
+
+  /* ESTO ARREGLA LOS BLOQUES DE ARRIBA (Etiquetas) */
+  .main {
+    width: 100% !important;
+    gap: 2rem !important;
+  }
+
+  .category-section {
+    border-radius: 0 !important; /* Para que ocupen todo el ancho visual */
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .tags-grid {
+    padding: 1.5rem 0.8rem !important; /* Menos espacio a los lados para que la caja crezca */
+  }
+
+  .tag-card {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Ajuste de textos para que no se amontonen */
+  .hero h1 {
+    font-size: 1.8rem !important;
+    padding: 0 10px;
+  }
+
+  /* El formulario (que ya te gustaba) se mantiene consistente */
+  .form-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Forzamos que el código (pre) no rompa el ancho del contenedor */
+  pre {
+    font-size: 0.75rem !important;
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+  }
+}
+
+/* Ajuste para celulares muy angostos (2 columnas en vez de 3) */
+@media screen and (max-width: 400px) {
+  nav {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media screen and (max-width: 850px) {
+  /* ESTO OCULTA LA SIDEBAR SOLO EN CELULARES */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* Ajustamos el contenedor para que el contenido principal 
+     ocupe todo el ancho ahora que no hay sidebar */
+  .container {
+    display: block !important; /* Cambiamos a block para evitar huecos del grid */
+    padding: 1rem !important;
+  }
+
+  .main {
+    width: 100% !important;
+  }
+}
+/* ESTO SOLO AFECTA A CELULARES (Menos de 850px) */
+@media screen and (max-width: 850px) {
+  
+  /* 1. Forzamos al contenedor del header a ser vertical para que el logo quede arriba */
+  .header-inner {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 1rem 0 !important;
+    align-items: center !important;
+  }
+
+  /* 2. FORZAMOS UNA SOLA HILERA (CINTA DESLIZANTE) */
+  nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* <--- ESTO evita los dos renglones */
+    justify-content: flex-start !important; /* Alinea al inicio para poder deslizar */
+    overflow-x: scroll !important; /* Habilita el deslizamiento lateral */
+    width: 100% !important;
+    padding: 0.5rem 1.5rem !important;
+    gap: 10px !important;
+    
+    /* Ocultar barra de scroll para que se vea limpio */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch; /* Deslizamiento suave en iPhone */
+  }
+
+  nav::-webkit-scrollbar {
+    display: none; /* Oculta scroll en Chrome/Safari */
+  }
+
+  /* 3. Ajuste de los botones para que no se deformen */
+  nav a {
+    flex: 0 0 auto !important; /* <--- CLAVE: evita que los botones se encojan o se amontonen */
+    white-space: nowrap !important; /* <--- CLAVE: evita que el texto salte de línea */
+    font-size: 0.8rem !important;
+    padding: 6px 15px !important;
+    border-radius: 20px !important;
+    border: 1.5px solid var(--pink-100) !important;
+    background: var(--white) !important;
+  }
+
+  /* Ocultamos la sidebar repetida en móvil como pediste antes */
+  .sidebar {
+    display: none !important;
+  }
+  
+  .container {
+    display: block !important;
+    padding: 1rem !important;
+  }
+}
+/* ESTO SOLO PARA CELULARES */
+@media screen and (max-width: 850px) {
+
+  /* 1. Preparamos el contenedor del menú */
+  nav {
+    position: relative !important;
+    padding-left: 45px !important; /* Espacio para que la flecha no tape el primer botón */
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 2. La flecha indicadora AL INICIO */
+  nav::before {
+    content: "→" !important;
+    position: absolute !important; /* Se queda fija al inicio */
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--pink-500);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 20;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    animation: pointingRight 1.2s infinite; /* Animación de señalar */
+  }
+
+  /* 3. Animación para que la flecha "empuje" al usuario a deslizar */
+  @keyframes pointingRight {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.8; }
+    50% { transform: translateY(-50%) translateX(5px); opacity: 1; }
+  }
+
+  /* 4. Ocultar la barra de scroll para que se vea más limpio */
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* Esto obliga al video a no salirse de su caja en celulares */
+  video, iframe, embed, object {
+    width: 100% !important;    /* Ocupa todo el ancho disponible */
+    height: auto !important;   /* Mantiene la proporción para que no se vea estirado */
+    max-width: 100% !important;
+    border-radius: 8px;        /* Opcional: para que combine con tus otros diseños */
+  }
+
+  /* Si el video está dentro de una caja de demo o info-block */
+  .demo-box, .info-block {
+    overflow: hidden !important; /* Corta cualquier cosa que intente salirse */
+  }
+  /* 2. ARREGLO PARA ELEMENTOS AMONTONADOS (Tablas o cuadros de demo) */
+  /* Devolvemos la tabla a su tamaño original */
+  /* 1. El contenedor (caja rosa) permite el scroll */
+  .demo-box {
+    width: 100% !important;
+    overflow-x: auto !important; /* Habilita el deslizamiento lateral */
+    display: block !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem !important;
+  }
+
+  /* 2. La TABLA: Forzamos que sea GRANDE */
+  .demo-box table {
+    display: table !important; /* Volvemos al modo tabla original */
+    width: 600px !important;   /* <--- Ajusta este número si la quieres aún más ancha */
+    min-width: 600px !important; 
+    border-collapse: collapse !important;
+    margin: 0 !important;
+  }
+
+  /* 3. Las celdas: Que el texto no se amontone */
+  .demo-box th, .demo-box td {
+    white-space: nowrap !important; /* Evita que el texto salte de línea y se vea apretado */
+    padding: 10px 15px !important;
+    text-align: left !important;
+  }
+  /* 3. ESPACIADO DE TEXTO (Para que las listas o párrafos no se peguen) */
+  .info-block {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .info-block ul {
+    padding-left: 1rem !important; /* Más espacio para las viñetas */
+  }
+
+  .tag-card-body {
+    gap: 1.2rem !important; /* Separa los bloques de info internos */
+  }

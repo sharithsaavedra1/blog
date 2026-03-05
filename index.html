@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<!-- Documento HTML5 -->
+
+<html lang="es">
+<head>
+  <!-- Configuración de la página: título, caracteres, diseño responsive y conexión con fuentes y CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMLBlog </title>
+  <link rel="icon" type="image/x-icon" href="multimedia/img/icon.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/css.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+<!-- Contenido visible de la página -->
+
+<header>
+  <!-- Encabezado del sitio con logo y menú de navegación -->
+  <div class="header-inner">
+    <a href="#" class="logo">HTML<span>Blog</span> 🌸</a>
+    <nav>
+      <!-- Enlaces a las diferentes secciones del blog -->
+      <a href="#estructurales">Estructurales</a>
+      <a href="#texto">Texto</a>
+      <a href="#listas">Listas</a>
+      <a href="#formularios">Formularios</a>
+      <a href="#tablas">Tablas</a>
+      <a href="#multimedia">Multimedia</a>
+      <a href="#practica">Práctica</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <!-- Sección principal que presenta el objetivo del blog -->
+  <span class="hero-badge"> Blog Educativo · HTML Tags</span>
+  <h1>Aprende las etiquetas<br/><em>HTML</em> por categorías</h1>
+  <p>Una guía completa y práctica para dominar las etiquetas HTML más importantes.</p>
+
+  <div class="hero-stats">
+    <!-- Información destacada del contenido del sitio -->
+    <div class="stat"><strong>20+</strong><span>etiquetas</span></div>
+    <div class="stat"><strong>6</strong><span>categorías</span></div>
+    <div class="stat"><strong>1</strong><span>formulario funcional</span></div>
+  </div>
+</section>
+
+<div class="container">
+<!-- Contenedor principal que organiza el contenido en menú lateral y área principal -->
+
+  <aside class="sidebar">
+    <!-- Barra lateral con las categorías del blog -->
+    <p class="sidebar-title"> Categorías</p>
+    <ul>
+      <!-- Enlaces que llevan a cada sección del contenido -->
+      <li><a href="#estructurales"><span class="icon"></span> Estructurales</a></li>
+      <li><a href="#texto"><span class="icon"></span> Texto</a></li>
+      <li><a href="#listas"><span class="icon"></span> Listas</a></li>
+      <li><a href="#formularios"><span class="icon"></span> Formularios</a></li>
+      <li><a href="#tablas"><span class="icon"></span> Tablas</a></li>
+      <li><a href="#multimedia"><span class="icon"></span> Multimedia</a></li>
+      <li><a href="#practica"><span class="icon"></span> Formulario práctico</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+  <!-- Área principal donde se muestra el contenido de las categorías -->
+
+    <section class="category-section" id="estructurales">
+    <!-- Sección que explica las etiquetas estructurales de HTML -->
+      
+  <div class="category-header">
+    <!-- Encabezado de la categoría -->
+    <span class="category-icon"> </span>
+    <div>
+      <h2>Etiquetas Estructurales</h2>
+      <p>Dan forma y semántica al esqueleto de una página web.</p>
+    </div>
+  </div>
+
+  <div class="tags-grid">
+  <!-- Contenedor donde se muestran las tarjetas de cada etiqueta -->
+
+    <div class="tag-card">
+      <!-- Tarjeta que explica la etiqueta <html> -->
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;html&gt;</span>
+        <span class="tag-badge">Raíz</span>
+      </div>
+      <div class="tag-card-body">
+        <!-- Información básica, sintaxis y buenas prácticas -->
+        <div class="info-block"><h4> Definición</h4>
+          <p>Es el elemento raíz de todo documento HTML. Envuelve todo el contenido.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;html lang="es"&gt;
+  ...contenido...
+&lt;/html&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Siempre incluir el atributo lang para accesibilidad.</li>
+            <li>Debe contener solo &lt;head&gt; y &lt;body&gt;.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <!-- Tarjeta que explica la etiqueta <head> -->
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;head&gt;</span>
+        <span class="tag-badge">Metadatos</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Contiene los metadatos: título, estilos y scripts. No se muestra en pantalla.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi página&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css.css"&gt;
+&lt;/head&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Incluir siempre charset, viewport y title.</li>
+            <li>Cargar CSS antes de cerrar el &lt;head&gt;.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <!-- Tarjeta que explica la etiqueta <body> -->
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;body&gt;</span>
+        <span class="tag-badge">Contenido</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Contiene todo el contenido visible de la página.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;body&gt;
+  &lt;h1&gt;Hola mundo&lt;/h1&gt;
+  &lt;p&gt;Bienvenido al blog.&lt;/p&gt;
+&lt;/body&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Solo puede haber un &lt;body&gt; por documento.</li>
+            <li>Cargar scripts antes de cerrar &lt;/body&gt;.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tag-card">
+<!-- Tarjeta que explica etiquetas semánticas principales de HTML -->
+
+      <div class="tag-card-header">
+        <!-- Encabezado de la tarjeta con el nombre de las etiquetas -->
+        <span class="tag-name">&lt;header&gt; &lt;main&gt; &lt;footer&gt;</span>
+        <span class="tag-badge">Semántica</span>
+      </div>
+
+      <div class="tag-card-body">
+        <!-- Contenido informativo: definición, sintaxis, ejemplo y buenas prácticas -->
+
+        <div class="info-block"><h4> Definición</h4>
+          <p>Etiquetas semánticas que delimitan las zonas principales del sitio.</p>
+        </div>
+
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;header&gt; Mi Blog&lt;/header&gt;
+&lt;main&gt;
+  &lt;p&gt;Contenido principal&lt;/p&gt;
+&lt;/main&gt;
+&lt;footer&gt;© 2025&lt;/footer&gt;</pre>
+        </div>
+
+        <div class="info-block"><h4> Demo visual</h4>
+
+          <!-- Ejemplo visual de cómo se organizan header, main y footer -->
+          <div class="demo-box" style="display:flex;flex-direction:column;gap:.4rem;text-align:center;font-size:.8rem;">
+
+          <div class="demo-box" style="display:flex;flex-direction:column;gap:.4rem;text-align:center;font-size:.8rem ;">
+ 
+            <div style="background:#ffd6e7;padding:.4rem;border-radius:6px;font-weight:700;">HEADER 🌸</div>
+            <div style="background:#fff0f6;padding:.6rem;border-radius:6px;border:1px dashed #ffadd2;">MAIN — contenido</div>
+            <div style="background:#ffd6e7;padding:.4rem;border-radius:6px;font-weight:700;">FOOTER</div>
+          </div>
+        </div>
+
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Mejoran accesibilidad y SEO.</li>
+            <li>Reemplaza &lt;div id="header"&gt;.</li>
+          </ul>
+        </div>
+      </div>
+</div>
+
+</div>
+</section>
+
+<section class="category-section" id="texto">
+<!-- Nueva sección dedicada a las etiquetas de texto -->
+
+  <div class="category-header">
+    <!-- Encabezado de la categoría -->
+    <span class="category-icon"></span>
+    <div>
+      <h2>Etiquetas de Texto</h2>
+      <p>Formatean y estructuran el contenido textual del documento.</p>
+    </div>
+  </div>
+
+  <div class="tags-grid">
+  <!-- Contenedor donde se muestran las tarjetas de etiquetas -->
+
+    <div class="tag-card">
+      <!-- Tarjeta que explica los encabezados h1 a h6 -->
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;h1&gt; — &lt;h6&gt;</span>
+        <span class="tag-badge">Encabezados</span>
+      </div>
+
+      <div class="tag-card-body">
+        <!-- Información sobre definición, sintaxis y buenas prácticas -->
+        <div class="info-block"><h4> Definición</h4>
+          <p>Definen títulos y subtítulos. h1 es el más importante; h6 el menos.</p>
+        </div>
+
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Sección&lt;/h3&gt;</pre>
+        </div>
+
+        <div class="info-block"><h4> Demo visual</h4>
+          <!-- Ejemplo visual de diferentes niveles de encabezados -->
+          <div class="demo-box">
+            <p style="font-size:1.4rem;font-weight:800;color:#c41d7f;">H1 — Título grande</p>
+            <p style="font-size:1.1rem;font-weight:700;color:#eb2f96;">H2 — Subtítulo</p>
+            <p style="font-size:.95rem;font-weight:600;color:#f759ab;">H3 — Sección pequeña</p>
+          </div>
+        </div>
+
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Solo un &lt;h1&gt; por página para SEO.</li>
+            <li>No saltar niveles de jerarquía.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjetas que explican diferentes etiquetas de texto en HTML -->
+<div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;p&gt;</span>
+        <span class="tag-badge">Párrafo</span>
+      </div>
+
+      <!-- Información básica sobre la etiqueta -->
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Define un párrafo de texto con márgenes automáticos.</p>
+        </div>
+
+        <!-- Ejemplo de uso de la etiqueta -->
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;p&gt;Este es un párrafo de ejemplo.&lt;/p&gt;</pre>
+        </div>
+
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>No anidar párrafos dentro de otros párrafos.</li>
+            <li>Usar para bloques de texto continuo.</li>
+          </ul>
+        </div>
+      </div>
+</div>
+
+<!-- Tarjeta que muestra etiquetas para dar énfasis al texto -->
+<div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;strong&gt; &amp; &lt;em&gt;</span>
+        <span class="tag-badge">Énfasis</span>
+      </div>
+
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>&lt;strong&gt; indica importancia (negrita). &lt;em&gt; indica énfasis (cursiva).</p>
+        </div>
+
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;p&gt;Es &lt;strong&gt;muy importante&lt;/strong&gt;
+estudiar &lt;em&gt;todos los días&lt;/em&gt;.&lt;/p&gt;</pre>
+        </div>
+
+        <!-- Ejemplo visual del resultado -->
+        <div class="info-block"><h4> Demo visual</h4>
+          <div class="demo-box">
+            <p>Es <strong style="color:#c41d7f;">muy importante</strong> estudiar <em style="color:#eb2f96;">todos los días</em>.</p>
+          </div>
+        </div>
+
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul><li>Preferir strong/em sobre b/i por semántica.</li></ul>
+        </div>
+      </div>
+</div>
+
+<!-- Tarjeta que explica cómo crear enlaces en HTML -->
+<div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;a&gt;</span>
+        <span class="tag-badge">Enlace</span>
+      </div>
+
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Crea hipervínculos a otras páginas, archivos o secciones.</p>
+        </div>
+
+        <!-- Ejemplo de sintaxis de enlace -->
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;a href="https://developer.mozilla.org"
+   target="_blank"&gt;
+  Visita MDN 
+&lt;/a&gt;</pre>
+        </div>
+
+        <!-- Ejemplo visual del enlace -->
+        <div class="info-block"><h4> Demo visual</h4>
+          <div class="demo-box">
+            <a href="https://developer.mozilla.org" target="_blank"
+               style="color:#eb2f96;font-weight:700;">Visita MDN </a>
+          </div>
+        </div>
+
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Usar texto descriptivo, no "haz clic aquí".</li>
+            <li>Agregar rel="noopener" con target="_blank".</li>
+          </ul>
+        </div>
+      </div>
+</div>
+</div>
+</section>
+
+<!-- Sección dedicada a las etiquetas de listas -->
+<section class="category-section" id="listas">
+  <div class="category-header">
+    <span class="category-icon"> </span>
+    <div>
+      <h2>Etiquetas de Listas</h2>
+      <p>Organizan información en grupos ordenados o no ordenados.</p>
+    </div>
+  </div>
+
+  <div class="tags-grid">
+
+    <!-- Tarjeta que explica listas no ordenadas -->
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;ul&gt; + &lt;li&gt;</span>
+        <span class="tag-badge">No ordenada</span>
+      </div>
+
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>&lt;ul&gt; crea una lista con viñetas. Cada elemento va en un &lt;li&gt;.</p>
+        </div>
+
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</pre>
+        </div>
+
+        <!-- Ejemplo visual de la lista -->
+        <div class="info-block"><h4> Demo visual</h4>
+          <div class="demo-box">
+            <ul style="padding-left:1.2rem;">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Usar cuando el orden no importa.</li>
+            <li>Los &lt;li&gt; solo van dentro de ul/ol.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta que explica listas ordenadas -->
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;ol&gt; + &lt;li&gt;</span>
+        <span class="tag-badge">Ordenada</span>
+      </div>
+
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>&lt;ol&gt; crea una lista numerada donde el orden tiene significado.</p>
+        </div>
+
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;ol&gt;
+  &lt;li&gt;Abre VS Code&lt;/li&gt;
+  &lt;li&gt;Crea index.html&lt;/li&gt;
+  &lt;li&gt;Escribe tu código&lt;/li&gt;
+&lt;/ol&gt;</pre>
+        </div>
+
+        <!-- Ejemplo visual de lista numerada -->
+        <div class="info-block"><h4> Demo visual</h4>
+          <div class="demo-box">
+            <ol style="padding-left:1.2rem;">
+              <li>Abre VS Code</li><li>Crea index.html</li><li>Escribe tu código</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Usar para pasos o instrucciones.</li>
+            <li>Atributo start para empezar en número diferente.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 
+Sección de contenido educativo que muestra distintas etiquetas HTML organizadas en tarjetas.
+Cada tarjeta explica una etiqueta con su definición, sintaxis, ejemplo visual y buenas prácticas.
+Las categorías incluidas aquí son: listas de definición, formularios y tablas.
+El objetivo es que el usuario pueda aprender cómo funcionan estas etiquetas mediante ejemplos prácticos.
+-->
+
+<div class="tag-card">
+      
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</span>
+        <span class="tag-badge">Definición</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Lista de definiciones: dt es el término y dd su descripción.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de marcado web&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de estilos&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Demo visual</h4>
+          <div class="demo-box">
+            <dl>
+              <dt style="font-weight:700;color:#c41d7f;">HTML</dt>
+              <dd style="padding-left:1rem;">Lenguaje de marcado web</dd>
+              <dt style="font-weight:700;color:#c41d7f;margin-top:.4rem;">CSS</dt>
+              <dd style="padding-left:1rem;">Lenguaje de estilos</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Usar para glosarios o pares clave-valor.</li>
+            <li>No usar solo para sangría visual.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+    <section class="category-section" id="formularios">
+  <div class="category-header">
+    <span class="category-icon"></span>
+    <div>
+      <h2>Etiquetas de Formularios</h2>
+      <p>Recopilan datos del usuario para enviarlos al servidor.</p>
+    </div>
+  </div>
+  <div class="tags-grid">
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;form&gt;</span>
+        <span class="tag-badge">Contenedor</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Envuelve todos los controles de un formulario y define cómo se envían los datos.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;form action="/enviar" method="post"&gt;
+  ...controles...
+&lt;/form&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Siempre especificar method (get/post).</li>
+            <li>Usar novalidate solo con validación propia.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;input&gt;</span>
+        <span class="tag-badge">Campo</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Control más versátil de HTML. Su comportamiento cambia con el atributo type.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;input type="text" placeholder="Tu nombre"&gt;
+&lt;input type="email" required&gt;
+&lt;input type="password"&gt;
+&lt;input type="checkbox"&gt;
+&lt;input type="radio" name="g1"&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Demo visual</h4>
+          <div class="demo-box" style="display:flex;flex-direction:column;gap:.4rem;">
+            <input type="text" placeholder="Texto" style="padding:.3rem .6rem;border:1px solid #ffadd2;border-radius:6px;font-size:.82rem;"/>
+            <input type="email" placeholder="Email" style="padding:.3rem .6rem;border:1px solid #ffadd2;border-radius:6px;font-size:.82rem;"/>
+          </div>
+        </div>
+        <div class="info-block"><h4>Buenas prácticas</h4>
+          <ul>
+            <li>Asociar siempre un &lt;label&gt; con cada input.</li>
+            <li>Usar el type correcto para mejor UX móvil.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;select&gt; + &lt;option&gt;</span>
+        <span class="tag-badge">Desplegable</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Crea un menú desplegable con opciones predefinidas.</p>
+        </div>
+        <div class="info-block"><h4>Sintaxis</h4>
+          <pre>&lt;select name="nivel"&gt;
+  &lt;option value="basico"&gt;Básico&lt;/option&gt;
+  &lt;option value="intermedio"&gt;Intermedio&lt;/option&gt;
+  &lt;option value="avanzado"&gt;Avanzado&lt;/option&gt;
+&lt;/select&gt;</pre>
+        </div>
+        <div class="info-block"><h4>Demo visual</h4>
+          <div class="demo-box">
+            <select style="padding:.3rem .6rem;border:1px solid #ffadd2;border-radius:6px;font-size:.82rem;">
+              <option>Básico</option><option>Intermedio</option><option>Avanzado</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;textarea&gt;</span>
+        <span class="tag-badge">Área de texto</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4>Definición</h4>
+          <p>Campo de texto multilínea para mensajes largos o comentarios.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;textarea rows="4"
+  placeholder="Escribe aquí..."&gt;
+&lt;/textarea&gt;</pre>
+        </div>
+        <div class="info-block"><h4>Buenas prácticas</h4>
+          <ul>
+            <li>Definir tamaño con CSS en lugar de rows/cols.</li>
+            <li>Añadir maxlength para limitar caracteres.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+    <section class="category-section" id="tablas">
+  <div class="category-header">
+    <span class="category-icon"> </span>
+    <div>
+      <h2>Etiquetas de Tablas</h2>
+      <p>Organizan datos en filas y columnas de forma estructurada.</p>
+    </div>
+  </div>
+  <div class="tags-grid">
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt;</span>
+        <span class="tag-badge">Tabla completa</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>table crea la tabla. tr = fila, th = encabezado, td = celda de datos.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Etiqueta&lt;/th&gt;
+      &lt;th&gt;Uso&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;table&gt;&lt;/td&gt;
+      &lt;td&gt;Contenedor de tabla&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Demo visual</h4>
+          <div class="demo-box">
+            <table>
+              <thead><tr><th>Etiqueta</th><th>Función</th></tr></thead>
+              <tbody>
+                <tr><td>&lt;table&gt;</td><td>Contenedor principal</td></tr>
+                <tr><td>&lt;tr&gt;</td><td>Fila</td></tr>
+                <tr><td>&lt;th&gt;</td><td>Celda encabezado</td></tr>
+                <tr><td>&lt;td&gt;</td><td>Celda dato</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Usar thead, tbody y tfoot para semántica.</li>
+            <li>Las tablas son para DATOS, no para maquetar.</li>
+            <li>Incluir scope en los th para accesibilidad.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- 
+Sección que muestra etiquetas HTML relacionadas con contenido multimedia.
+Incluye ejemplos de imágenes, video, audio e iframe, explicando su uso,
+sintaxis, demostración visual y buenas prácticas para utilizarlas en páginas web.
+-->
+
+<section class="category-section" id="multimedia">
+  <section class="category-section" id="multimedia">
+  <div class="category-header">
+    <span class="category-icon"> </span>
+    <div>
+      <h2>Etiquetas Multimedia</h2>
+      <p>Insertan imágenes, videos, audio y otros recursos visuales.</p>
+    </div>
+  </div>
+  <div class="tags-grid">
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;img&gt;</span>
+        <span class="tag-badge">Imagen</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Inserta una imagen. Es una etiqueta vacía, no tiene cierre.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;img src="foto.jpg"
+     alt="Descripción"
+     width="300"
+     height="200"&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Demo visual</h4>
+          <div class="demo-box" style="text-align:center;">
+  <img src="multimedia/img/monos.jpeg" alt="Ejemplo de imagen" width="200">
+</div>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>El atributo alt es OBLIGATORIO para accesibilidad.</li>
+            <li>Especificar width y height para evitar saltos.</li>
+            <li>Usar formatos modernos: WebP, AVIF.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;video&gt;</span>
+        <span class="tag-badge">Video</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4>Definición</h4>
+          <p>Inserta un reproductor de video sin plugins externos.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;video src="video.mp4"
+       controls
+       width="400"
+       poster="miniatura.jpg"&gt;
+  Tu navegador no soporta video.
+&lt;/video&gt;</pre>
+
+        </div>
+        <div class="info-block"><h4>Demo visual</h4>
+  <div class="demo-box" style="text-align:center;">
+    <video width="400" controls>
+      <source src="multimedia/video/sena.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+</div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Siempre incluir controls para el usuario.</li>
+            <li>Añadir subtítulos con &lt;track&gt;.</li>
+            <li>Usar &lt;source&gt; para múltiples formatos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;audio&gt;</span>
+       
+        <audio controls>
+        <source src="multimedia/audio/audio.mp3" type="audio/mpeg">
+         Tu navegador no soporta audio.
+        </audio>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Inserta un reproductor de audio. Soporta MP3, OGG y WAV.</p>
+        </div>
+        <div class="info-block"><h4> Sintaxis</h4>
+          <pre>&lt;audio controls&gt;
+            &lt;source src="cancion.mp3" type="audio/mpeg"&gt;
+            &lt;source src="cancion.ogg" type="audio/ogg"&gt;
+            &lt;/audio&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Proveer mínimo 2 formatos para compatibilidad.</li>
+            <li>No usar autoplay sin permiso del usuario.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <div class="tag-card-header">
+        <span class="tag-name">&lt;iframe&gt;</span>
+        <span class="tag-badge">Incrustado</span>
+      </div>
+      <div class="tag-card-body">
+        <div class="info-block"><h4> Definición</h4>
+          <p>Incrusta otra página web, mapa o video de YouTube dentro de la página.</p>
+        </div>
+        <div class="info-block"><h4>Sintaxis</h4>
+          <pre>&lt;iframe
+            src="https://youtu.be/1bcoeAALVgE?si=00gure2Ky8JAhTNs"
+             width="560" height="315"
+             allowfullscreen
+             title="Mi video"&gt;
+                &lt;/iframe&gt;</pre>
+        </div>
+        <div class="info-block"><h4> Buenas prácticas</h4>
+          <ul>
+            <li>Siempre incluir atributo title.</li>
+            <li>Usar sandbox para limitar permisos.</li>
+            <li>Carga diferida con loading="lazy".</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- 
+Sección final del blog que incluye un formulario de práctica para aplicar
+etiquetas HTML de formularios (input, select, textarea, radio, checkbox y button).
+También contiene el pie de página del sitio y la conexión con el archivo JavaScript
+que permite el funcionamiento del formulario.
+-->
+    <section class="form-section" id="practica">
+      <div class="form-header">
+        <h2>🌸 Formulario de Contacto — Demo Funcional</h2>
+        <p>Este formulario usa: form, input, select, textarea, label y button.</p>
+      </div>
+      <div class="form-inner">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Ej. Emily García" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" placeholder="email@ejemplo.com" required />
+          </div>
+          <div class="form-group">
+            <label for="nivel">Nivel de HTML</label>
+            <select id="nivel">
+              <option value="">— Selecciona —</option>
+              <option value="basico"> Básico</option>
+              <option value="intermedio"> Intermedio</option>
+              <option value="avanzado">🌸 Avanzado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha de inicio</label>
+            <input type="date" id="fecha" />
+          </div>
+          <div class="form-group full">
+            <label>¿Cómo aprendes mejor?</label>
+            <div class="form-radios">
+              <label><input type="radio" name="estilo" value="visual" />  Visual</label>
+              <label><input type="radio" name="estilo" value="practico" />  Práctico</label>
+              <label><input type="radio" name="estilo" value="lectura" />  Lectura</label>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label>Etiquetas favoritas</label>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap;padding:.4rem 0;">
+              <label style="font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:.3rem;cursor:pointer;text-transform:none;letter-spacing:0;">
+                <input type="checkbox" value="formularios"> Formularios
+              </label>
+              <label style="font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:.3rem;cursor:pointer;text-transform:none;letter-spacing:0;">
+                <input type="checkbox" value="tablas"> Tablas
+              </label>
+              <label style="font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:.3rem;cursor:pointer;text-transform:none;letter-spacing:0;">
+                <input type="checkbox" value="multimedia"> Multimedia
+              </label>
+              <label style="font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:.3rem;cursor:pointer;text-transform:none;letter-spacing:0;">
+                <input type="checkbox" value="semantica"> Semántica
+              </label>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="mensaje">Mensaje o pregunta</label>
+            <textarea id="mensaje" placeholder="¿Tienes alguna duda sobre HTML?"></textarea>
+          </div>
+        </div>
+        <button class="btn-submit" onclick="enviarFormulario()">Enviar formulario </button>
+        <div class="form-success" id="success-msg">
+           ¡Mensaje enviado! Gracias por aprender HTML con nosotras 
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <p>Hecho  por <strong>Emily &amp; Danna </strong> — Actividad 3: Blog Educativo HTML</p>
+  <p style="margin-top:.3rem;font-size:.76rem;">HTML5 + CSS3 · Sin frameworks · Diseño propio</p>
+  <div class="footer-links">
+    <a href="#estructurales">Estructurales</a>
+    <a href="#texto">Texto</a>
+    <a href="#listas">Listas</a>
+    <a href="#formularios">Formularios</a>
+    <a href="#tablas">Tablas</a>
+    <a href="#multimedia">Multimedia</a>
+  </div>
+</footer>
+  </main>
+
+</div>
+  <script src="js/js.js"></script>
+</body>
+</html>
